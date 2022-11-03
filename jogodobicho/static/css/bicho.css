@@ -1,0 +1,95 @@
+.bicho{
+    width: 83vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backbichos{
+    margin-top: 10px;
+    width: 80vw;
+    height: 90vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    background: #201b2c;
+    box-shadow: 0px 10px 40px #00000056;
+    text-align: left;
+    
+}
+
+.form-label{
+    color: white;
+}
+
+.apostar-bicho{
+    width: 350px;
+    height: 490px;
+    border-radius: 30px;
+    margin-top: 65px;
+    background: #00000056;
+    align-items: center;
+}
+
+.valor-bicho{
+    margin: 40px 30px;
+}
+
+.valor-bicho > input{
+    margin-top: 20px;
+}
+
+.img-icone{
+    width: 225px;
+    height: 70px;
+}
+
+.imag-icon{
+    text-align: center;
+
+}
+
+.lista{
+    flex-direction: row;
+}
+
+.bichos-align{
+    margin: 60px 25px;
+}
+
+.margemb{
+    margin-top: 10px;
+    box-sizing: border-box;
+
+}
+label{
+    margin: 0px -5px;
+}
+
+.margemb label >input{
+    visibility: hidden;
+}
+
+.margemb label > input + img{
+    cursor:pointer;
+    border:4px solid #EEE;
+    border-radius:15px;
+    padding:10px;
+}
+
+.margemb label > input + img:hover{
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+
+.margemb label > input:checked + img{
+    border:4px solid #0f8;
+}
+
+.img-bichos{
+    width: 114px;
+    height: 73px;
+}

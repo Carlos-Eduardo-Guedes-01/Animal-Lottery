@@ -1,0 +1,186 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if request.user.is_authenticated %}
+   <title>Jogo do Bicho</title>
+   {% if msg %}
+            <div class="alert {{class}}">
+               {{msg}}
+            </div>
+         {% endif %}
+    <div class="container">
+        <fieldset class="bicho">
+
+            <div class="backbichos">
+                <div class="bichos-align">
+                <form action="{% url 'jogodobicho:/jogodobicho2/'%}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <div class="margemb">
+                        <label for="b1">
+                            <input type="checkbox" name="1" id="b1" value="1" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/avestruz.jpg" alt="Avestruz">
+                        </label>
+
+                        <label for="b2">
+                            <input type="checkbox" name="2" id="b2" value="2" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/aguia.jpg" alt="Águia">
+                        </label>
+
+                        <label for="b3">
+                            <input type="checkbox" name="3" id="b3" value="3" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/burro.jpg" alt="burro">
+                        </label>
+
+                        <label for="b4">
+                            <input type="checkbox" name="4" id="b4" value="4" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/borboleta.jpg" alt="Borboleta">
+                        </label>
+
+                        <label for="b5">
+                            <input type="checkbox" name="5" id="b5" value="5" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/cachorro.jpg" alt="cachorro">
+                        </label>                    
+                    </div>
+
+                    <div class="margemb">
+                        <label for="b6">
+                            <input type="checkbox" name="6" id="b6" value="6" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/cabra.jpg" alt="Cabra">
+                        </label>
+
+                        <label for="b7">
+                            <input type="checkbox" name="7" id="b7" value="7" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/carneiro.jpg" alt="Carneiro">
+                        </label>
+
+                        <label for="b8">
+                            <input type="checkbox" name="8" id="b8" value="8" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/camelo.jpg" alt="Camelo">
+                        </label>
+
+                        <label for="b9">
+                            <input type="checkbox" name="9" id="b9" value="9" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/cobra.jpg" alt="Cobra">
+                        </label>
+
+                        <label for="b10">
+                            <input type="checkbox" name="10" id="b10" value="10" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/coelho.jpg" alt="Coelho">
+                        </label>                    
+                    </div>
+
+                    <div class="margemb">
+                        <label for="b11">
+                            <input type="checkbox" name="11" id="b11" value="11" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/cavalo.jpg" alt="Cavalo">
+                        </label>
+
+                        <label for="b12">
+                            <input type="checkbox" name="12" id="b12" value="12" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/elefante.jpg" alt="Elefante">
+                        </label>
+
+                        <label for="b13">
+                            <input type="checkbox" name="13" id="b13" value="13" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/galo.jpg" alt="Galo">
+                        </label>
+
+                        <label for="b14">
+                            <input type="checkbox" name="14" id="b14" value="14" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/gato.jpg" alt="Gato">
+                        </label>
+
+                        <label for="b15">
+                            <input type="checkbox" name="15" id="b15" value="15" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/jacaré.jpg" alt="Jacaré">
+                        </label>                    
+                    </div>
+
+                    <div class="margemb">
+                        <label for="b16">
+                            <input type="checkbox" name="16" id="b16" value="16" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/leão.jpg" alt="Leão">
+                        </label>
+
+                        <label for="b17">
+                            <input type="checkbox" name="17" id="b17" value="17" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/macaco.jpg" alt="Macaco">
+                        </label>
+
+                        <label for="b18">
+                            <input type="checkbox" name="18" id="b18" value="18" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/porco.jpg" alt="Porco">
+                        </label>
+
+                        <label for="b19">
+                            <input type="checkbox" name="19" id="b19" value="19" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/pavão.jpg" alt="Pavão">
+                        </label>
+
+                        <label for="b20">
+                            <input type="checkbox" name="20" id="b20" value="20" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/peru.jpg" alt="Peru">
+                        </label>                    
+                    </div>
+
+                    <div class="margemb">
+                        <label for="b21">
+                            <input type="checkbox" name="21" id="b21" value="21" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/touro.jpg" alt="Leão">
+                        </label>
+
+                        <label for="b22">
+                            <input type="checkbox" name="22" id="b22" value="22" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/tigre.jpg" alt="Tigre">
+                        </label>
+
+                        <label for="b23">
+                            <input type="checkbox" name="23" id="b23" value="23" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/urso.jpg" alt="Urso">
+                        </label>
+
+                        <label for="b24">
+                            <input type="checkbox" name="24" id="b24" value="24" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/veado.jpg" alt="Veado">
+                        </label>
+
+                        <label for="b25">
+                            <input type="checkbox" name="25" id="b25" value="25" onclick="CountChecks('listtwo',2,this)">
+                            <img class="img-bichos" src="../../../static/img/vaca.jpg" alt="vaca">
+                        </label>                    
+                    </div>
+                </div>
+
+                    <div class="apostar-bicho">
+                        
+                            <div class="valor-bicho mb-4 d-grid gap-2">
+                                <div class="imag-icon">
+                                    <img class="img-icone" src="../../../static/img/animal_lottery.png" alt="Animal Lottery">
+                                </div>
+                                
+                                <input type="text" name="moeda" id="moeda" class="form-control" maxlength="12"  placeholder="Valor da aposta" onkeypress="return(MascaraMoeda(this,'.',',',event))">
+
+                                <button type="submit" class="btn btn-success btn-lg">Apostar</button>
+                            </div>
+
+                            <div class="imag-icon">
+                                <img src="../../../static/css/bichos.svg" alt="Bichos a solta">  
+                            </div>
+                
+                    </div>
+                    <!---->
+                    
+                </form>
+                <!---->
+            </div>
+        </fieldset>
+        <a href="{% url 'jogodobicho:sortear' %}">Sortear</a><br>
+        <a href="{% url 'jogodobicho:ganhadores' %}">Procurar</a>
+    </div>
+
+
+   {% else %}
+
+   Você não tem acesso a essa área!
+   {% endif %}
+   
+{% endblock %}

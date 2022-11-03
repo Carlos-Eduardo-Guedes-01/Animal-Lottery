@@ -1,0 +1,90 @@
+{% load bootstrap5 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Loteria</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h3>Hello my friend {{user.username}}</h3>
+        <a href="{% url 'accounts:/logouts/' %}">Sair</a>
+        <center>
+            <div class="container">
+                <h1>DIGITE OS NÚMEROS DESEJADOS</h1>
+                <form action="{%url 'loteria:cadastra_numero' %}" method="POST" autocomplete="off" class="form">
+                    {%csrf_token%}
+                        <div class="col-sm-3 my-1">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">1º</div>
+                            </div>
+                            {{form.valor1}}
+                          </div>
+                          </label>
+                        </div>
+                        <div class="col-sm-3 my-1">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">2º</div>
+                        </div>
+                        {{form.valor2}}
+                    </div>
+                    </div><div class="col-sm-3 my-1">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">3º</div>
+                        </div>
+                        {{form.valor3}}
+                    </div>
+                    </div><div class="col-sm-3 my-1">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">4º</div>
+                        </div>
+                        {{form.valor4}}
+                    </div>
+                    </div><div class="col-sm-3 my-1">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">5º</div>
+                        </div>
+                        {{form.valor5}}
+                    </div>
+                    </div><div class="col-sm-3 my-1">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">6º</div>
+                        </div>
+                        {{form.valor6}}
+                    </div>
+                    </div><div class="col-sm-3 my-1">
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text">Data</div>
+                        </div>
+                        {{form.data_aposta}}
+                    </div>
+                    </div>
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">Apostar</button>
+                    {% endbuttons %}
+                </form>
+            <a href="{% url 'loteria:testar_ganhadores' %}">Ver Sorteio</a><br>
+            <a href="{% url 'loteria:sortear' %}">Sortear</a>
+        </center>
+    {% else %}
+        <h4 style="color:red">Você precisa realiar o <a href="{% url 'loteria:page_login' %}">login</a></h4>
+    {% endif %}
+</body>
+</html>

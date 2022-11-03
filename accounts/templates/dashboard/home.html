@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block content %}
+   {% if request.user.is_authenticated %}
+   
+   <div class="center">
+      <div class="box">
+         <div class="card" style="width: 25rem;">
+            <img src="../../static/img/bicho.jpg" class="card-img-top" alt="Jogo do Bicho">
+            <div class="card-body">
+            <h5 class="card-title">Jogo do Bicho</h5>
+            <p class="card-text">Os jogadores podem fazer suas apostas escolhendo diferentes animais e os prêmios são decididos durante o sorteio. Se suas apostas são ganhadoras, você conseguirá grandes prêmios!</p>
+            <a href="{% url 'jogodobicho:inicio' valor%}" class="btn btn-primary">Jogar</a>
+            </div>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="card" style="width: 25rem;">
+            <img src="../../static/img/loteria.jpg" class="card-img-top" alt="Jogo do Bicho">
+            <div class="card-body">
+            <h5 class="card-title">Loteria</h5>
+            <p class="card-text">Os jogadores podem fazer suas apostas escolhendo os números que concorrerão ao sorteio. Se suas apostas são ganhadoras, você conseguirá grandes prêmios!.</p>
+            <a href="{% url 'loteria:apostar' valor %}" class="btn btn-primary">Jogar</a>
+            </div>
+         </div>
+      </div>
+
+   </div>
+
+   {% else %}
+   Você não tem acesso a essa área!
+   {% endif %}
+   
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+   <title>Loteria</title>
+   <center>
+      {% if msg %}
+         <div class="alert {{class}}">
+            {{msg}}
+         </div>
+      {% endif %}
+   </center>
+      <div class="container-sm">
+         <form action="{%url 'loteria:cadastra_numero' %}" method="POST" autocomplete="off">
+            {%csrf_token%}
+            <div class="loteria">
+               
+               <div class="lottery">
+                  <img src="../../static/img/loteria.jpg" alt="Loteria" width="62vw" height="50vh">
+
+                  <!--VALOR 1-->
+                  <div class="valores">
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 1</span>
+                        {{form.valor1}}
+                     </div>
+
+                  <!--VALOR 2-->
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 2</span>
+                        {{form.valor2}}
+                     </div>
+                  </div>
+
+                  <!--VALOR 3-->
+                  <div class="valores">
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 3</span>
+                        {{form.valor3}}
+                     </div>
+
+                  <!--VALOR 4-->
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 4</span>
+                        {{form.valor4}}
+                     </div>
+                  </div>
+
+                  <!--VALOR 5-->
+                  <div class="valores">
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 5</span>
+                        {{form.valor5}}
+                     </div>
+
+                  <!--VALOR 6-->
+                     <div class="input-group input-group-sm mb-2">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Valor 6</span>
+                        {{form.valor6}}
+                     </div>
+                     <br>
+                        {{form.clientes}}
+                  </div>
+
+                    {{form.data_aposta}}
+                
+                
+                     <div class="valores">
+                        <form>
+                           <div class="input-group mb-4">
+                              
+                              {{form.valor_aposta}}
+
+                              <button type="submit" class="btn btn-success">Apostar</button>
+                           </div>
+                        </form>
+                         
+                     </div>
+                  
+                  
+               </div>
+            </div>
+         </form>
+      </div>
+
+   {% else %}
+
+   Você não tem acesso a essa área!
+   {% endif %}
+   
+{% endblock %}
