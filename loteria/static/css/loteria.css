@@ -1,0 +1,41 @@
+.loteria{
+    width: 83vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.valores .input-group-text{
+    width: 2.1vw;
+    border-radius: 50px;
+}
+.lottery{
+    margin-top: 5%;
+    width: 40vw;
+    height: 70vh;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 0px 10px 40px #00000056;
+    text-align: center;
+    
+}
+
+.lottery > img{
+    margin-top: 20px;
+}
+
+.valores{
+    display: flex;
+    padding: 10px 50px;
+    flex-direction: row;
+    margin: 10px 0px;
+    border: none;
+    margin-bottom: -5px;
+    box-sizing: border-box;
+}
+
+.input-group{
+    margin: 0px 10px;
+}

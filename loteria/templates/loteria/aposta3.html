@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<center>
+   {% if msg %}
+   <div class="alert {{ class }}">
+      {{ msg }}
+   </div>
+   {% endif %}
+</center>
+<title>Loteria</title>
+<div class="container-sm">
+   <form action="{% url 'loteria:cadastra_numero' %}" method="POST" autocomplete="off">
+      {% csrf_token %}
+      <div class="loteria">
+         <div class="lottery">
+            <img src="../../../static/img/loteria.jpg" alt="Loteria" width="62vw" height="50vh">
+
+            <div class="valores">
+               <div class="input-group input-group-sm mb-2">
+                  {% for i in lista_numeros %}
+                  <span class="input-group-text" id="inputGroup-sizing-sm" style="border-radius: 49%;">{{ i }}</span>
+                  <input id="checkbox_{{ i }}" type="checkbox" name="{{ i }}" onclick="CountChecks(6, this)"
+                     value="{{ i }}">&nbsp;&nbsp;
+                  {% endfor %}
+               </div>
+            </div>
+
+            <br>
+            <input name="saldo" id="saldo" type="number" value="{{ valor }}" style="display:none;" readonly>
+            <input name="usuario" id="usuario" type="number" value="{{ user }}" style="display:none;" readonly>
+            <div class="valores">
+               <div class="input-group mb-4">
+                  <input name="moeda" type="text" id="moeda" class="form-control" maxlength="12"
+                     placeholder="Valor da aposta" onkeypress="return(MascaraMoeda(this, '.', ',', event))" required>
+                  <button type="submit" class="btn btn-success">Apostar</button>
+               </div>
+               <a href="{% url 'loteria:sortear' %}">
+                  <div class="input-group mb-4">Sortear</div>
+               </a><br>
+               <a href="{% url 'loteria:testar_ganhadores' %}">
+                  <div class="input-group mb-4">Ver ganhadores</div>
+               </a>
+            </div>
+         </div>
+      </div>
+   </form>
+</div>
+{% else %}
+<div class="alert alert-danger">Você não tem acesso a essa área!</div>
+{% endif %}
+
+{% endblock %}
