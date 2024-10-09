@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "django_crontab",
     'jogodobicho',
-    'django_celery_beat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,12 +126,11 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 #AUTH_USER_MODEL = 'accounts.Profile'
 #AUTH_USER_MODEL = 'users.User'
-# Celery configuration
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_TIMEZONE = 'America/Sao_Paulo'
+
+
+
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -140,3 +139,4 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587 #587, 465, 25 protocolo smtp
 EMAIL_HOST_USER = 'carloseduardoguedes89981456761@gmail.com'
 EMAIL_HOST_PASSWORD = 'grzi tkok rdov kofe'
+

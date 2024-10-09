@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from accounts.views import home, create, logouts, store, painel, dologin, dashboard, changepass, changePassword, depositar
+app_name='accounts'
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin site

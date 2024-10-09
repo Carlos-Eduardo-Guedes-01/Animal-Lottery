@@ -8,8 +8,10 @@ import time
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-def consultaSaldo(request):
-    return Usuario.objects.get(pk = request.user.id).saldo
+def consultaSaldo(usuario_id):
+    # Busca o saldo com base no ID do usuário
+    return Usuario.objects.get(pk=usuario_id).saldo
+
 # Create your views here.
 def home(request):
     return render(request,'../../accounts/templates/home.html')
