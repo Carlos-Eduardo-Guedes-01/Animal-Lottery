@@ -23,6 +23,7 @@ from django.conf import settings
 from random import randint
 from django.utils import timezone  # Certifique-se de que o timezone do Django está importado
 from datetime import date
+from django.core.mail import EmailMessage
 
 # O resto do código continua aqui
 
@@ -88,7 +89,7 @@ def procura_ganhador():
             print("Enviando e-mails aos ganhadores...")
             for usuario_id in ganhadores:
                 usuario = User.objects.get(id=usuario_id)
-                context = {'usuario': usuario}
+                context = {'usuario': usuario,'nome':usuario.name,'jogo':'Jogo do Bicho'}
                 message = render_to_string('loteria/notificacao.html', context)
                 recipient_list = [usuario.email]
                 send_mail(
@@ -150,7 +151,6 @@ def sorteio_():
     }
 # Função que procura ganhadores
 def procura_ganhador_bicho():
-    
     # Obtém o sorteio do dia atual
     sorteios_do_dia = sorteio.objects.filter(data_sorteio=timezone.now())
 
@@ -176,14 +176,22 @@ def procura_ganhador_bicho():
     # Envio de email para os ganhadores
     for ganhador in ganhadores:
         subject = 'Animal Lottery'
-        message = "Olá, você ganhou o sorteio do Jogo do Bicho!"
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [ganhador.usuario.email]
+        
+        # Renderiza o template HTML
+        context = {'ganhador': ganhador,'nome':ganhador.usuario.first_name,'jogo':'Jogo do Bicho'}  # Adapte o contexto se necessário
+        html_message = render_to_string('loteria/notificacao.html', context)
 
-        # Envia o e-mail para o ganhador
-        send_mail(subject, message, email_from, recipient_list)
+        # Cria um email
+        send_mail(
+            subject,
+            '',  # Corpo em texto simples, opional
+            settings.EMAIL_HOST_USER,
+            [ganhador.usuario.email],
+            html_message=html_message,  # Mensagem HTML aqui
+        )
 
     return 'E-mails enviados para os ganhadores com sucesso!'
+
 
 def teste_timezone():
     from django.utils import timezone
