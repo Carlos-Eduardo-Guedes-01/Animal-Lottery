@@ -1,0 +1,190 @@
+.bicho {
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.backbichos {
+    width: 70vw;
+    height: 550px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    background: #201b2c;
+    box-shadow: 0px 10px 40px #00000056;
+    text-align: left;
+
+}
+
+.form-label {
+    color: white;
+}
+
+.apostar-bicho {
+    width: 22vw;
+    height: 57vh;
+    border-radius: 30px;
+    margin-top: 65px;
+    background: #00000056;
+    align-items: center;
+}
+
+.valor-bicho {
+    margin: 40px 30px;
+}
+
+.valor-bicho>input {
+    margin-top: 20px;
+}
+
+.img-icone {
+    width: 225px;
+    height: 70px;
+}
+
+.imag-icon {
+    text-align: center;
+
+}
+
+.lista {
+    flex-direction: row;
+}
+
+.bichos-align {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+.margemb {
+    margin-top: 10px;
+    box-sizing: border-box;
+
+}
+
+label {
+    margin: 0px -5px;
+}
+
+.margemb label>input {
+    visibility: hidden;
+}
+
+.margemb label>input+img {
+    cursor: pointer;
+    border: 4px solid #EEE;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.margemb label>input+img:hover {
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+
+.margemb label>input:checked+img {
+    border: 4px solid #0f8;
+}
+
+.img-bichos {
+    width: 114px;
+    height: 73px;
+}
+
+.bichos-solta {
+    width: 70%;
+}
+
+.valor-aposta {
+    display: none;
+}
+
+
+
+@media (max-width: 1400px) {
+    .backbichos {
+        width: 74vw;
+    }
+}
+
+@media (max-width: 1300px) {
+    .backbichos {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 1230px) {
+    .img-icone {
+        width: 200px;
+    }
+}
+
+@media (max-width: 1215px) {
+    .apostar-bicho {
+        display: none;
+    }
+
+    .backbichos {
+        width: 700px;
+        display: block;
+    }
+
+    .bichos-align {
+        display: flex;
+        margin-top: 60px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .valor-aposta {
+        margin-left: 25px;
+        width: 90%;
+        justify-content: center;
+        display: flex;
+    }
+
+    .apostar {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 772px) {
+    .backbichos {
+        width: 600px;
+    }
+
+    .img-bichos {
+        width: 100px;
+    }
+}
+
+@media (max-width: 622px) {
+    .backbichos {
+        width: 400px;
+
+    }
+}
+
+@media (min-height: 1550px) {
+    .backbichos {
+        width: 90vw;
+        height: 800px;
+    }
+
+    .img-bichos {
+        width: 150px;
+        height: 110px;
+    }
+}

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="icon" type="icon" href="{% static 'icons/icon_animal_lottery.ico' %}" />
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+</head>
+
+<body class="login1">
+   <form name="form-users" id="formUsers" method="post" action="/store/">
+      <div class="main-login">
+         
+         {% csrf_token %}
+         <div class="left-login">
+            <h1>Cadastro<br>Animal Lottery<br></h1>
+            <img src="{% static 'css/bichos.svg' %}" class="left-login-image" alt="Bichos a solta">    
+         </div>
+
+         <div class="right-login">
+            <div class="card-login">
+               <h1>Cadastre-se</h1>
+               <div class="textfield">
+                  <!--<label for="name">Nome</label>-->
+                  <input type="text" name="name" id="name" placeholder="Nome">
+
+                  <!--<label for="usuario">Usuário</label>-->
+                  <input type="text" name="user" id="user" placeholder="Usuário">
+               </div>
+
+               <div class="textfield">
+                  <!--<label for="senha">Senha</label>-->
+                  <input type="password" name="password" id="password" placeholder="Senha">
+
+                  <!--<label for="senha">Repita a Senha</label>-->
+                  <input type="password" name="password-conf" id="password-conf" placeholder="Repita a Senha">
+               </div>
+
+               <div class="textfield">
+                  <!--<label for="email">Email</label>-->
+                  <input type="email"name="email" id="email" placeholder="Email">
+               </div>
+                  <button class="btn-login">Cadastrar</button>
+               <p class="cadastrar">Já tem uma conta? <a href="{% url 'accounts:/painel/' %}" class="link-info">Fazer Login</a></p>
+               
+               {% if msg %}
+            <div class="alert {{class}}">
+               {{msg}}
+            </div>
+         {% endif %}
+            </div>
+         </div>
+      </div>
+   </form>
+   <!-- Java Script-->
+   <script src="{% static 'js/javascript.js' %}"></script>
+</body>

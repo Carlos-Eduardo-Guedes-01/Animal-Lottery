@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<center>
+   {% if msg %}
+   <div class="alert {{ class }}">
+      {{ msg }}
+   </div>
+   {% endif %}
+</center>
+<title>Loteria</title>
+<form action="{% url 'loteria:cadastra_numero' %}" method="POST" autocomplete="off">
+   {% csrf_token %}
+   <div class="loteria">
+      <div class="lottery">
+         <img src="../../../accounts/static/img/loteria.jpg" alt="Loteria" width="62vw" height="50vh"
+            class="img-loteria">
+
+         <div class="valores">
+            {% for i in lista_numeros %}
+            <div class="ball-container">
+               <input id="checkbox_{{ i }}" type="checkbox" name="{{ i }}" value="{{ i }}"
+                  onclick="CountChecks(6, this)" style="display:none;">
+               <label for="checkbox_{{ i }}" class="ball">{{ i }}</label>
+            </div>
+            {% endfor %}
+         </div>
+
+         <br>
+         <input name="saldo" id="saldo" type="number" value="{{ valor }}" style="display:none;" readonly>
+         <input name="usuario" id="usuario" type="number" value="{{ user }}" style="display:none;" readonly>
+         <div class="valores">
+            <div class="input-group mb-4">
+               <input name="moeda" type="text" id="moeda" class="form-control" maxlength="12"
+                  placeholder="Valor da aposta" onkeypress="return(MascaraMoeda(this, '.', ',', event))" required>
+               <button type="submit" class="btn btn-success">Apostar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</form>
+{% else %}
+<div class="alert alert-danger">Você não tem acesso a essa área!</div>
+{% endif %}
+
+{% endblock %}

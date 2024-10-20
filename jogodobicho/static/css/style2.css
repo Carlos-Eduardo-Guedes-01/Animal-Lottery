@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,500;0,700;0,800;0,900;1,800&display=swap');
+
+.login1 {
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.cadastrar {
+    color: white;
+}
+
+.cadastrar>a {
+    color: #0f8;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login>h1 {
+    color: #0f8;
+    font-size: 3vw;
+}
+
+.left-login-image {
+    width: 30vw;
+}
+
+.right-login {
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-login>h1 {
+    color: #0f8;
+    margin: 4;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+
+.textfield {
+    width: 100%;
+    display: flex;
+    float: left;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.textfield>input {
+    width: 100%;
+    float: left;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-left: 1%;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+
+}
+
+.textfield>input:hover {
+    transform: scale(1.01);
+    transition: all 0.5s;
+}
+
+.textfield>label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield>input::placeholder {
+    color: #f0ffff94;
+}
+
+.btn-login {
+    width: 99%;
+    padding: 15px;
+    margin: 10px;
+    align-content: center;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    color: #2b134b;
+    background: #0f8;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-sizing: border-box;
+}
+
+.btn-login:hover {
+    transform: scale(1.03);
+    transition: all 0.5s;
+}
+
+.alert-danger {
+    color: red;
+}
+
+/*
+BOLINHAS DA LOTERIA
+*/
+.ball-container {
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+
+.ball {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #f2c94c;
+    color: black;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
