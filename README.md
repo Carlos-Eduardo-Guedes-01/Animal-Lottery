@@ -33,3 +33,20 @@
 ```bash
 git clone https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery.git
 cd Animal-Lottery
+
+### 2️⃣ Crie um Ambiente Virtual (Opcional, mas Recomendado)
+```bash
+python -m venv venv
+source venv/bin/activate  # No Windows, use: venv\Scripts\activate
+
+### 3️⃣ Instale as Dependências
+```bash
+pip install -r requirements.txt
+
+### 4️⃣ Migre o Banco de Dados
+```bash
+python manage.py migrate
+
+### 5️⃣ Inicie o Servidor
+```bash
+python manage.py runserver
