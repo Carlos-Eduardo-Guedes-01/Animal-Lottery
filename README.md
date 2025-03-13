@@ -17,16 +17,15 @@
 
 ### 🔐 Tela de Login
 <img src="https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/blob/main/imagens/Tela_login.png?raw=true" alt="Clique aqui" width="1000">
-![Tela de Login](https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Tela_login.png)
 
 ### 🎮 Escolha do Jogo
-![Escolha do Jogo](https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Escolha-jogo.png)
+<img src="https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/blob/main/imagens/Escolha-jogo.png?raw=true" alt="Clique aqui" width="1000">
 
 ### 💰 Tela de Aposta - Jogo do Bicho
-![Tela de Aposta 1](https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Tela_aposta1.png)
+<img src="https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/blob/main/imagens/Tela_aposta1.png?raw=true" alt="Clique aqui" width="1000">
 
 ### 🎟️ Tela de Aposta - Loteria
-![Tela de Aposta 2](https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Tela_aposta2.png)
+<img src="https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/blob/main/imagens/Tela_aposta2.png?raw=true" alt="Clique aqui" width="1000">
 
 ## 🛠️ Como rodar o projeto localmente
 
