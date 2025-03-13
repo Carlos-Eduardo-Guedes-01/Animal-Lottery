@@ -16,6 +16,7 @@
 ## 🖼️ Imagens do Projeto
 
 ### 🔐 Tela de Login
+<img src="https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Tela_login.png" alt="Clique aqui" width="300">
 ![Tela de Login](https://github.com/Carlos-Eduardo-Guedes-01/Animal-Lottery/tree/main/imagens/Tela_login.png)
 
 ### 🎮 Escolha do Jogo
