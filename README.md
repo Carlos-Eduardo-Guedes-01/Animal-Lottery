@@ -16,7 +16,7 @@
 ## 🖼️ Imagens do Projeto
 
 ### 🔐 Tela de Login
-![Tela de Login](./images/Tela_login.png)
+![Tela de Login]<img src="https://github.com/Carlos-Eduardo-Guedes-01/insumos/blob/main/images/Tela_login.png" alt="Clique aqui" width="300">
 
 ### 🎮 Escolha do Jogo
 ![Escolha do Jogo](./images/Escolha-jogo.png)
